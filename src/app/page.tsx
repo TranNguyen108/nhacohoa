@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { X, Menu, Phone, MessageCircle, Instagram, MapPin, Mail, Facebook } from 'lucide-react'
+import { X, Menu, Phone, Instagram, Mail, Facebook } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Products from './products'
 import Extra from './extra'
@@ -295,7 +295,7 @@ export default function Home() {
                 className="sm:w-[80px] sm:h-[80px] mx-auto rounded-full mb-3 sm:mb-4 border-2 sm:border-4 border-pink-200"
               />
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-pink-600 mb-2" style={{ fontFamily: "'Unfolding Flower', serif" }}>
-                Giá Sale "Nhà Có Hoa"
+                Giá Sale &ldquo;Nhà Có Hoa&rdquo;
               </h2>
               <div className="w-12 sm:w-16 h-1 bg-pink-400 mx-auto rounded-full"></div>
             </div>

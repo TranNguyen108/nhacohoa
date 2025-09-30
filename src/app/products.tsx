@@ -1,9 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { Eye, X, Search, Filter, SlidersHorizontal, Phone, MessageCircle, Instagram, MapPin } from 'lucide-react'
+import { Eye, X, Search, SlidersHorizontal, Phone, MessageCircle, Instagram } from 'lucide-react'
 import { useState } from 'react'
 
 interface Product {
@@ -665,7 +664,7 @@ export default function Products() {
                   Hiển thị {filteredAndSortedProducts.length} / {products.length} sản phẩm
                   {searchTerm && (
                     <span className="ml-2 px-2 py-1 bg-pink-100 text-pink-700 rounded-full text-xs">
-                      "{searchTerm}"
+                      &ldquo;{searchTerm}&rdquo;
                     </span>
                   )}
                   {filterByType !== 'all' && (

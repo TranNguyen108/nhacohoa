@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Heart, Star, X, Phone, MessageCircle, Instagram, MapPin } from 'lucide-react'
+import { Heart, Star, X, Phone, MessageCircle, Instagram } from 'lucide-react'
 
 export default function Extra() {
   const [showContactModal, setShowContactModal] = useState(false)
