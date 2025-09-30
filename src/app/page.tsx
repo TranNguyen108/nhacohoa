@@ -3,196 +3,23 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { X, Menu, Phone, Instagram, Mail, Facebook } from 'lucide-react'
+import { X, Phone, Instagram, Mail, Facebook } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Products from './products'
 import Extra from './extra'
 import FAQ from './faq'
 import Footer from './footer'
 import Introduction from './introduction'
+import Header from '@/components/Header'
 
 export default function Home() {
   const [showPriceModal, setShowPriceModal] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [showContactModal, setShowContactModal] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-    
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <div className="min-h-screen">
-      {/* Enhanced Glass Header */}
-      <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="w-full px-1 lg:px-8 xl:px-16 2xl:px-24 pt-1 lg:pt-3">
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={`backdrop-blur-lg border border-white/20 rounded-lg lg:rounded-xl shadow-2xl transition-all duration-300 ${
-              isScrolled 
-                ? 'bg-white/95 border-gray-200/50' 
-                : 'bg-white/10 border-white/20'
-            }`}
-          >
-            <div className="flex items-center justify-between px-2 lg:px-6 xl:px-8 py-1.5 lg:py-3">
-              {/* Logo và tên shop */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex items-center space-x-1 lg:space-x-3 flex-shrink-0"
-              >
-                <Image
-                  src="/img/logo.jpg"
-                  alt="Nhà Có Hoa Logo"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 lg:w-12 lg:h-12 xl:w-14 xl:h-14 rounded-full border border-white/30 lg:border-2 shadow-lg"
-                />
-                <div className="min-w-0">
-                  <h2 className={`text-xs lg:text-xl xl:text-2xl font-bold transition-colors duration-300 truncate ${
-                    isScrolled ? 'text-gray-900' : 'text-white'
-                  }`} style={{ fontFamily: "'Unfolding Flower', serif" }}>
-                    Nhà Có Hoa
-                  </h2>
-                </div>
-              </motion.div>
-
-              {/* Desktop Navigation */}
-              <nav className="hidden lg:flex space-x-6 xl:space-x-8">
-                <a href="#" className={`hover:scale-105 transition-all duration-200 font-medium text-base xl:text-lg whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-pink-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}>
-                  Trang chủ
-                </a>
-                <a href="#products" className={`hover:scale-105 transition-all duration-200 font-medium text-base xl:text-lg whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-pink-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}>
-                  Sản phẩm
-                </a>
-                <a href="#extra" className={`hover:scale-105 transition-all duration-200 font-medium text-base xl:text-lg whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-pink-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}>
-                  Theo yêu cầu
-                </a>
-                <a href="#faq" className={`hover:scale-105 transition-all duration-200 font-medium text-base xl:text-lg whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-pink-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}>
-                  FAQ
-                </a>
-                <button 
-                  onClick={() => setShowContactModal(true)}
-                  className={`hover:scale-105 transition-all duration-200 font-medium text-base xl:text-lg whitespace-nowrap ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-pink-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}>
-                  Liên hệ
-                </button>
-              </nav>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setShowMobileMenu(!showMobileMenu)}
-                className={`lg:hidden p-1 rounded transition-all duration-200 flex-shrink-0 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:bg-gray-100' 
-                    : 'text-white hover:bg-white/20'
-                }`}
-              >
-                <Menu className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Mobile Menu */}
-            {showMobileMenu && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className={`lg:hidden border-t overflow-hidden ${
-                  isScrolled ? 'border-gray-200' : 'border-white/20'
-                }`}
-              >
-                <nav className="px-2 py-2 space-y-1">
-                  <a 
-                    href="#" 
-                    onClick={() => setShowMobileMenu(false)}
-                    className={`block py-1.5 px-2 rounded font-medium transition-all duration-200 text-xs ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:bg-gray-100 hover:text-pink-600' 
-                        : 'text-white/90 hover:bg-white/20 hover:text-white'
-                    }`}
-                  >
-                    Trang chủ
-                  </a>
-                  <a 
-                    href="#products" 
-                    onClick={() => setShowMobileMenu(false)}
-                    className={`block py-1.5 px-2 rounded font-medium transition-all duration-200 text-xs ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:bg-gray-100 hover:text-pink-600' 
-                        : 'text-white/90 hover:bg-white/20 hover:text-white'
-                    }`}
-                  >
-                    Sản phẩm
-                  </a>
-                  <a 
-                    href="#extra" 
-                    onClick={() => setShowMobileMenu(false)}
-                    className={`block py-1.5 px-2 rounded font-medium transition-all duration-200 text-xs ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:bg-gray-100 hover:text-pink-600' 
-                        : 'text-white/90 hover:bg-white/20 hover:text-white'
-                    }`}
-                  >
-                    Theo yêu cầu
-                  </a>
-                  <a 
-                    href="#faq" 
-                    onClick={() => setShowMobileMenu(false)}
-                    className={`block py-1.5 px-2 rounded font-medium transition-all duration-200 text-xs ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:bg-gray-100 hover:text-pink-600' 
-                        : 'text-white/90 hover:bg-white/20 hover:text-white'
-                    }`}
-                  >
-                    FAQ
-                  </a>
-                  <button 
-                    onClick={() => {
-                      setShowMobileMenu(false)
-                      setShowContactModal(true)
-                    }}
-                    className={`block w-full text-left py-1.5 px-2 rounded font-medium transition-all duration-200 text-xs ${
-                      isScrolled 
-                        ? 'text-gray-700 hover:bg-gray-100 hover:text-pink-600' 
-                        : 'text-white/90 hover:bg-white/20 hover:text-white'
-                    }`}
-                  >
-                    Liên hệ
-                  </button>
-                </nav>
-              </motion.div>
-            )}
-          </motion.div>
-        </div>
-      </header>
+      {/* Header Component */}
+      <Header setShowContactModal={setShowContactModal} />
 
       {/* Hero Section */}
       <section 
@@ -204,9 +31,9 @@ export default function Home() {
         {/* Glass blur overlay chỉ cho background */}
         <div className="absolute inset-0 backdrop-blur-sm"></div>
         
-        <div className="container mx-auto relative z-10 flex items-center justify-center">
+        <div className="w-full mx-0 relative z-10 flex items-center justify-center px-2">
           {/* Main Content - Center */}
-          <div className="text-center px-2 sm:px-4">
+          <div className="text-center px-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
