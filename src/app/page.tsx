@@ -59,22 +59,6 @@ export default function Home() {
                  }}>
                 Flower Shop - Only Online
               </p>
-              
-              {/* Button - Responsive */}
-              <div className="pt-2 sm:pt-4">
-                <Button 
-                  size="lg" 
-                  onClick={() => setShowPriceModal(true)}
-                  className="px-8 sm:px-16 lg:px-20 py-4 sm:py-6 text-base sm:text-lg lg:text-xl font-bold backdrop-blur-md bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 hover:border-white/60 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  style={{
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
-                  }}
-                >
-                  <span className="hidden sm:inline"> </span>
-                  Giá Sale Nhà Có Hoa
-                  <span className="hidden sm:inline"> </span> 
-                </Button>
-              </div>
             </motion.div>
           </div>
         </div>

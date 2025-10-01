@@ -11,7 +11,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: "Thời gian và địa điểm giao hoa như thế nào?",
-      answer: "Chúng tôi giao hoa trong khu vực TP.HCM từ 8:00 - 22:00 hàng ngày. Thời gian chuẩn bị tùy độ phức tạp của thiết kế."
+      answer: "Chúng mình giao hoa trong khu vực TP.HCM từ 8:00 - 22:00 hàng ngày. Thời gian chuẩn bị tùy độ phức tạp của thiết kế."
     },
     {
       question: "Thời gian nhận và giao như thế nào?",
@@ -19,15 +19,15 @@ export default function FAQ() {
     },
     {
       question: "Tôi có thể đặt hoa theo nhóm được không?",
-      answer: "Có, chúng tôi nhận đặt hoa theo nhóm với số lượng lớn. Liên hệ trước ít nhất 1 ngày để được tư vấn và báo giá ưu đãi."
+      answer: "Có, chúng mình nhận đặt hoa theo nhóm với số lượng lớn. Liên hệ trước ít nhất 1 ngày để được tư vấn và báo giá ưu đãi."
     },
     {
       question: "Làm thế nào để đặt hoa theo yêu cầu?",
-      answer: "Bạn có thể liên hệ qua hotline, Zalo, hoặc Facebook Messenger. Cung cấp mô tả chi tiết về thiết kế mong muốn và chúng tôi sẽ tư vấn."
+      answer: "Bạn có thể liên hệ qua hotline, Zalo, hoặc Facebook Messenger. Cung cấp mô tả chi tiết về thiết kế mong muốn và chúng mình sẽ tư vấn."
     },
     {
       question: "Tôi cần chuẩn bị gì khi đặt hoa?",
-      answer: "Bạn cần chuẩn bị ý tưởng thiết kế, màu sắc yêu thích, ngân sách dự kiến và thời gian nhận hoa. Chúng tôi sẽ hỗ trợ tư vấn chi tiết."
+      answer: "Bạn cần chuẩn bị ý tưởng thiết kế, màu sắc yêu thích, ngân sách dự kiến và thời gian nhận hoa. Chúng mình sẽ hỗ trợ tư vấn chi tiết."
     }
   ]
 

@@ -149,7 +149,6 @@ export default function Products() {
       mainFlowers: "hướng dương và Cỏ đuôi chồn",
       colors: [
         { name: "Vàng", code: "#ffd700", image: "/img/huong-duong-mini.jpg" },
-        { name: "Mix thạch thảo", code: "#98fb98", image: "/img/huong-duong-mini-mix.jpg" }
       ],
       defaultImage: "/img/huong-duong-mini.jpg",
       pricing: {
